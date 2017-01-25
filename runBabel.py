@@ -1,5 +1,3 @@
-lily@Artemis:~$ cd Documents
-lily@Artemis:~/Documents$ cd Pitt
 babel --gen3D /home/dkoes/PDBbind/general-set-without-refined/1avp/1avp_lig.smi /home/dkoes/PDBbind/general-set-without-refined//1avp1avp_lig.sdf
 babel --gen3D /home/dkoes/PDBbind/general-set-without-refined/1bxl/1bxl_lig.smi /home/dkoes/PDBbind/general-set-without-refined//1bxl1bxl_lig.sdf
 babel --gen3D /home/dkoes/PDBbind/general-set-without-refined/1d3v/1d3v_lig.smi /home/dkoes/PDBbind/general-set-without-refined//1d3v1d3v_lig.sdf
