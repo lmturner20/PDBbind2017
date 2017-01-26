@@ -3,7 +3,7 @@ infile = open('Problem_Ligands', 'r')
 string = infile.readline()
     
 while string !=' ':
-	string = string[0:3]
+	string = string[0:4]
 	smiItem = "/home/dkoes/PDBbind/general-set-except-refined/"+string + "/" + string + "_lig.smi"
 	sdfItem = "/home/dkoes/PDBbind/general-set-except-refined/"+string + "/" + string + "_lig.sdf"
 	cmd1 = ("babel --gen3D " + smiItem +" " + sdfItem)
