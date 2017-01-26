@@ -2,7 +2,7 @@ import os
 infile = open('Problem_Ligands', 'r')
 string = infile.readline()
     
-while line !=' ':
+while string !=' ':
 	string = string[0:3]
 	smiItem = "/home/dkoes/PDBbind/general-set-except-refined/"+item + "/" + item + "_lig.smi"
 	sdfItem = "/home/dkoes/PDBbind/general-set-except-refined/"+item + "/" + item + "_lig.sdf"
