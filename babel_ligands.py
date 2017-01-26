@@ -9,5 +9,6 @@ while string !=' ':
 	cmd1 = ("babel --gen3D " + smiItem +" " + sdfItem)
 	os.system(cmd1)
 	string = infile.readline()
+	break
 
 infile.close()
