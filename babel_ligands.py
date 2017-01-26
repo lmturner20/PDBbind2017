@@ -1,6 +1,6 @@
 import os
 infile = open('Problem_Ligands', 'r')
-string = infile.readLine()
+string = infile.readline()
     
 while line !=' ':
 	string = string[0:3]
