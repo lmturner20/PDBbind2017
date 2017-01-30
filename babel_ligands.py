@@ -1,5 +1,5 @@
 import os
-infile = open('Problem_Ligands', 'r')
+infile = open('Remaining_Problem_Ligands', 'r')
 string = infile.readline()
     
 while string !=' ':
