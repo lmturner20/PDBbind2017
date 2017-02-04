@@ -2,6 +2,6 @@ public class fixSMI
 {
 	public static void main( String[] args )
 	{
-		System.out.print( "Oc1ccc2=[N]3c4c5N(C=C(F)C=c5c5C(=O)NC(=O)c5c4=c2c1)[Ru]31(Cl)(C#[O])N(CC2=[N]1C=CC=C2)c1ccccc1	3fxz_ligand" );
+		System.out.print( "[N]=12[Ir+3]3456([Cl-])([C@-]7([C]3(C)=[C]4(C)[C]5(C)=[C]67C)C)[N-](S(=O)(=O)c3ccccc3)CC=1C=C(c1ccc(cc1)S(=O)(=O)N)C=C2	3zp9_ligand" );
 	}
 }
