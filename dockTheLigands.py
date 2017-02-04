@@ -1,5 +1,5 @@
 import os
-infile = open('Problem_Ligands', 'r')
+infile = open('dock180.txt', 'r')
 string = infile.readline()
     
 while string !=' ':
