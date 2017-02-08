@@ -3,7 +3,7 @@ infile = open('dock180.txt', 'r')
 int i
 string = infile.readline()
     
-while string !='bloop':
+while string !=' ':
 	string = string[0:4]
 	dockedItem = "/home/dkoes/PDBbind/general-set-except-refined/"+string + "/" + string + "_docked.sdf.gz"
 	cmd1 = ("gninatyper " + dockedItem)
