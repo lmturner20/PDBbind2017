@@ -1,8 +1,8 @@
 import os
-infile = open('FinalGenSet.txt', 'r')
+infile = open('FinalRefSet', 'r')
 string = infile.readline()
     
-while string !=' ':
+for textLine in infile:
 	string = string[0:4]
 	dir1 = "/home/dkoes/PDBbind/general-set-except-refined/" + string
 	dir2 = "/home/dkoes/PDBbind/general-set-with-refined/" + string
