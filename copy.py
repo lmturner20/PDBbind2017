@@ -1,5 +1,5 @@
 import os
-infile = open('dock180.txt', 'r')
+infile = open('FinalGenSet.txt', 'r')
 string = infile.readline()
     
 while string !=' ':
