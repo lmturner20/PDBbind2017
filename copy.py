@@ -1,7 +1,7 @@
 import os
 infile = open('FinalRefSet', 'r')
     
-for textLine in infile:
+for string in infile:
 	string = string[0:4]
 	dir1 = "/home/dkoes/PDBbind/general-set-except-refined/" + string
 	dir2 = "/home/dkoes/PDBbind/general-set-with-refined/" + string
