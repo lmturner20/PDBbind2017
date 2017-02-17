@@ -15,9 +15,6 @@ HID histidine H
 HEM hemoglobin? (http://www.bmsc.washington.edu/CrystaLinks/man/pdb/guide2.2_frame.html)
 CYX cystenine C
 CYM cystenine C'''
-
-'''increment = 0'''
-
 def getResidueString(structure):
     seq=''
     for model in structure:
@@ -40,8 +37,6 @@ def calcUpperTriangleOfDistanceMatrix(targets):
 	    length= max(len(targets[r]), len(targets[c]))
 	    distance = (length-score)/length
 	    distanceMatrix.append(distance)
-            '''increment = increment + 1
-            print increment'''
     return distanceMatrix
 
 def calcClusterGroups(distanceMatrix, target_names):
@@ -260,3 +255,4 @@ if __name__ == '__main__':
 	if args.test_train: print '%d files generated'%(args.number*2)
 	else: print '%d files generated'%args.number
 	       
+    
