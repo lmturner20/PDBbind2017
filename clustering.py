@@ -31,6 +31,9 @@ def getResidueString(structure):
     return seq
 
 def calcUpperTriangleOfDistanceMatrix(targets):
+    global increment
+    increment = increment + 1
+    print increment
     n = len(targets)
     distanceMatrix= []
     for r in xrange(n):
@@ -39,9 +42,6 @@ def calcUpperTriangleOfDistanceMatrix(targets):
 	    length= max(len(targets[r]), len(targets[c]))
 	    distance = (length-score)/length
 	    distanceMatrix.append(distance)
-	    global increment
-            increment = increment + 1
-            print increment
     return distanceMatrix
 
 def calcClusterGroups(distanceMatrix, target_names):
