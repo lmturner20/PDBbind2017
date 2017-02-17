@@ -39,6 +39,7 @@ def calcUpperTriangleOfDistanceMatrix(targets):
 	    length= max(len(targets[r]), len(targets[c]))
 	    distance = (length-score)/length
 	    distanceMatrix.append(distance)
+	    global increment
             increment = increment + 1
             print increment
     return distanceMatrix
