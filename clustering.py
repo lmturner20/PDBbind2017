@@ -16,7 +16,7 @@ HEM hemoglobin? (http://www.bmsc.washington.edu/CrystaLinks/man/pdb/guide2.2_fra
 CYX cystenine C
 CYM cystenine C'''
 
-increment = 0
+'''increment = 0'''
 
 def getResidueString(structure):
     seq=''
@@ -40,8 +40,8 @@ def calcUpperTriangleOfDistanceMatrix(targets):
 	    length= max(len(targets[r]), len(targets[c]))
 	    distance = (length-score)/length
 	    distanceMatrix.append(distance)
-            increment = increment + 1
-            print increment
+            '''increment = increment + 1
+            print increment'''
     return distanceMatrix
 
 def calcClusterGroups(distanceMatrix, target_names):
