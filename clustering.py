@@ -8,8 +8,6 @@ import scipy.cluster.hierarchy
 import numpy as np
 import sys, argparse, bisect, re, os, fnmatch
 
-increment = 0
-
 ''' Some amino acids have nonstandard residue names: 
 http://ambermd.org/tutorials/advanced/tutorial1_adv/
 HIE histidine H
@@ -31,12 +29,11 @@ def getResidueString(structure):
     return seq
 
 def calcUpperTriangleOfDistanceMatrix(targets):
-    global increment
-    increment = increment + 1
-    print increment
     n = len(targets)
-    distanceMatrix= []
+    distanceMatrix= []   
     for r in xrange(n):
+	print "Row",r
+	sys.stdout.flush()
 	for c in xrange(r+1,n,1):
 	    score = pairwise2.align.globalxx(targets[r], targets[c], score_only=True)
 	    length= max(len(targets[r]), len(targets[c]))
