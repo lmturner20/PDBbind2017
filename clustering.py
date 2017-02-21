@@ -30,16 +30,16 @@ def getResidueString(structure):
 
 def calcUpperTriangleOfDistanceMatrix(targets):
     n = len(targets)
-    distanceMatrix= []   
-    for r in xrange(n):
-	print "Row",r
-	sys.stdout.flush()
-	for c in xrange(r+1,n,1):
-	    score = pairwise2.align.globalxx(targets[r], targets[c], score_only=True)
-	    length= max(len(targets[r]), len(targets[c]))
-	    distance = (length-score)/length
-	    distanceMatrix.append(distance)
+    queue = multiprocessing.Queue()
+    distanceMatrix = queue.(map(cUTDM2(x, y, z), r in xrange(n), targets, n)
     return distanceMatrix
+		
+def cUTDM2(r, targets, n):
+    for c in xrange(r+1,n,1):
+        score = pairwise2.align.globalxx(targets[r], targets[c], score_only=True)
+	length= max(len(targets[r]), len(targets[c]))
+	distance = (length-score)/length
+	distanceMatrix.append(distance)
 
 def calcClusterGroups(distanceMatrix, target_names):
     distanceMatrix = np.array(distanceMatrix)
