@@ -4,6 +4,7 @@ from Bio.PDB.PDBParser import PDBParser
 from Bio.PDB.Polypeptide import three_to_one
 from Bio.PDB.Polypeptide import is_aa
 from Bio import pairwise2
+from multiprocessing import Pool
 import scipy.cluster.hierarchy
 import numpy as np
 import sys, argparse, bisect, re, os, fnmatch
