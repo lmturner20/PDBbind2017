@@ -31,8 +31,11 @@ def getResidueString(structure):
 
 def calcUpperTriangleOfDistanceMatrix(targets):
     n = len(targets)
+    nums = []
+    for r in xrange(n)
+	nums.append(r)
     pool = Pool()
-    distanceMatrix = pool.map(cUTDM2, r in xrange(n), targets, n)
+    distanceMatrix = pool.map(cUTDM2, nums, targets, n)
     return distanceMatrix
 		
 def cUTDM2(r, targets, n):
