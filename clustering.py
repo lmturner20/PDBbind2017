@@ -197,7 +197,7 @@ if __name__ == '__main__':
 	print '%d clusters created'%len(cluster_groups)
 	j=0
 	for i in cluster_groups:
-	    j++
+	    j = j+1
 	    print j,':'
 	    for h in i:
 	       print h
