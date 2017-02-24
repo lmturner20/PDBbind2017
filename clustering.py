@@ -60,7 +60,6 @@ def calcClusterGroups(distanceMatrix, target_names):
     cluster_groups= [[] for _ in xrange(np.max(cluster_indexs))]
     for i in xrange(cluster_indexs.size):
 	cluster_groups[cluster_indexs[i]-1].append(target_names[i])
-	print target_names[i]
     return cluster_groups
     
 def createFolds(cluster_groups,cnum,args):
@@ -196,6 +195,8 @@ if __name__ == '__main__':
 	distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
 	cluster_groups = calcClusterGroups(distanceMatrix,target_names)
 	print '%d clusters created'%len(cluster_groups)
+	for i in cluster_groups
+	    print i
 	folds = createFolds(cluster_groups,cnum, args)
     
     for f in xrange(len(folds)):
