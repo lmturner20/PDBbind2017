@@ -71,7 +71,7 @@ def createFolds(cluster_groups,cnum,args):
 	for i in xrange(len(cluster_groups)):
 	    for t in cluster_groups[i]:
 		try:
-		    if t.startswith('/')
+		    if t.startswith('/'):
 		        t = t[0:len(t)]
 		    posenum = len(fnmatch.filter(os.listdir('%s/gninatypes/'%(t)), '*.gninatypes'))
 		except OSError: 
