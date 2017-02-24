@@ -35,10 +35,11 @@ def calcUpperTriangleOfDistanceMatrix(targets):
     for r in xrange(n):
 	nums.append(r)
     pool = Pool()
-    distanceMatrix = pool.map(cUTDM2, nums, targets, n)
+    function = partial(cUTDM2, targets, n)
+    distanceMatrix = pool.map(function, nums)
     return distanceMatrix
 		
-def cUTDM2(r, targets, n):
+def cUTDM2(targets, n, r):
     for c in xrange(r+1,n,1):
         score = pairwise2.align.globalxx(targets[r], targets[c], score_only=True)
 	length= max(len(targets[r]), len(targets[c]))
