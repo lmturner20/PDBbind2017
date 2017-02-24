@@ -70,7 +70,7 @@ def createFolds(cluster_groups,cnum,args):
 	target_numposes = [0]*len(cluster_groups)
 	for i in xrange(len(cluster_groups)):
 	    for t in cluster_groups[i]:
-		    t = t[0:37]
+		t = t[0:37]
 		try:
 		    posenum = len(fnmatch.filter(os.listdir('%s/gninatypes/'%(t)), '*.gninatypes'))
 		except OSError: 
