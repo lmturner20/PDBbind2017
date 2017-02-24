@@ -72,7 +72,7 @@ def createFolds(cluster_groups,cnum,args):
 	    for t in cluster_groups[i]:
 		print t
 		try:
-		    posenum = len(fnmatch.filter(os.listdir('%s/%s/gninatypes/'%(args.path,t)), '*.gninatypes'))
+		    posenum = len(fnmatch.filter(os.listdir('%s/gninatypes/'%(t)), '*.gninatypes'))
 		except OSError: 
 		    print '%s gninatype files not found at %s/%s/gninatypes/'%(t,args.path,t)
 		    continue
@@ -163,7 +163,7 @@ if __name__ == '__main__':
     parser.add_argument('-t', '--test_train', action='store_false', default=True,help='create test and train sets')
     parser.add_argument('-r', '--repeat', action='store_false', default=True,help='if true poses can repeat between folds')
     parser.add_argument('--threshold', type=float,default=.2,help='what percentage dissimilariy to cluster by. default: 80% similarity(.2 dissimilarity)')
-    parser.add_argument('--path',type=str,default='/home/lmt72/PDBbind2017/tiny-set',help="path to gninatypes files")
+    parser.add_argument('--path',type=str,default='',help="path to gninatypes files")
     args = parser.parse_args()
     if args.crossvalidate:
 	args.test_train = True
