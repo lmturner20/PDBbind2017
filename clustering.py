@@ -34,6 +34,8 @@ def calcUpperTriangleOfDistanceMatrix(targets):
     n = len(targets)
     nums = []
     for r in xrange(n):
+	print "Row", r
+	sys.stdout.flush()
 	nums.append(r)
     pool = Pool()
     function = partial(cUTDM2, targets, n)
