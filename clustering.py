@@ -45,7 +45,9 @@ def cUTDM2(targets, n, r):
         score = pairwise2.align.globalxx(targets[r], targets[c], score_only=True)
 	length= max(len(targets[r]), len(targets[c]))
 	distance = (length-score)/length
-	distanceMatrix.append(distance)
+	distances = []
+	distances.append(distance)
+    return distances
 
 def calcClusterGroups(distanceMatrix, target_names):
     distanceMatrix = np.array(distanceMatrix)
