@@ -195,7 +195,7 @@ if __name__ == '__main__':
 	distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
 	cluster_groups = calcClusterGroups(distanceMatrix,target_names)
 	print '%d clusters created'%len(cluster_groups)
-	for i in cluster_groups
+	for i in cluster_groups:
 	    print i
 	folds = createFolds(cluster_groups,cnum, args)
     
