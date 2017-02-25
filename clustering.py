@@ -34,8 +34,6 @@ def calcUpperTriangleOfDistanceMatrix(targets):
     n = len(targets)
     nums = []
     for r in xrange(n):
-	print "Row", r
-	sys.stdout.flush()
 	nums.append(r)
     #pool = Pool()
     function = partial(cUTDM2, targets, n)
@@ -50,6 +48,7 @@ def calcUpperTriangleOfDistanceMatrix(targets):
 def cUTDM2(targets, n, r):
     distances = []
     for c in xrange(r+1,n,1):
+	print targets[r],targets[c]
         score = pairwise2.align.globalxx(targets[r], targets[c], score_only=True)
 	length= max(len(targets[r]), len(targets[c]))
 	distance = (length-score)/length
