@@ -37,9 +37,10 @@ def calcUpperTriangleOfDistanceMatrix(targets):
 	print "Row", r
 	sys.stdout.flush()
 	nums.append(r)
-    pool = Pool()
+    #pool = Pool()
     function = partial(cUTDM2, targets, n)
-    returnedMatrix = pool.map(function, nums)
+    #returnedMatrix = pool.map(function, nums)
+    returnedMatrix = map(function, nums)
     distanceMatrix = []
     for j in returnedMatrix:
         for k in j:
