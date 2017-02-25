@@ -30,13 +30,13 @@ def getResidueString(structure):
 		else: seq+=('X')
     return seq
 
-def calcUpperTriangleOfDistanceMatrix(targets):
+def calcUpperTriangleOfDistanceMatrix(targets, target_names):
     n = len(targets)
     nums = []
     for r in xrange(n):
 	nums.append(r)
     #pool = Pool()
-    function = partial(cUTDM2, targets, n)
+    function = partial(cUTDM2, targets, target_names, n)
     #returnedMatrix = pool.map(function, nums)
     returnedMatrix = map(function, nums)
     distanceMatrix = []
@@ -45,10 +45,10 @@ def calcUpperTriangleOfDistanceMatrix(targets):
             distanceMatrix.append(k)
     return distanceMatrix
 		
-def cUTDM2(targets, n, r):
+def cUTDM2(targets, target_names, n, r):
     distances = []
     for c in xrange(r+1,n,1):
-	print targets[r],targets[c]
+	print target_names[r],target_names[c]
         score = pairwise2.align.globalxx(targets[r], targets[c], score_only=True)
 	length= max(len(targets[r]), len(targets[c]))
 	distance = (length-score)/length
@@ -194,7 +194,7 @@ if __name__ == '__main__':
 	folds = []
 	folds.append(target_names)
     else:
-	distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
+	distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets, target_names)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
 	cluster_groups = calcClusterGroups(distanceMatrix,target_names)
 	print '%d clusters created'%len(cluster_groups)
 	j=0
