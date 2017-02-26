@@ -17,6 +17,9 @@ HID histidine H
 HEM hemoglobin? (http://www.bmsc.washington.edu/CrystaLinks/man/pdb/guide2.2_frame.html)
 CYX cystenine C
 CYM cystenine C'''
+
+distanceFile = open('DistanceFile', 'w')
+
 def getResidueString(structure):
     seq=''
     for model in structure:
@@ -48,10 +51,11 @@ def calcUpperTriangleOfDistanceMatrix(targets, target_names):
 def cUTDM2(targets, target_names, n, r):
     distances = []
     for c in xrange(r+1,n,1):
-	print target_names[r],target_names[c]
         score = pairwise2.align.globalxx(targets[r], targets[c], score_only=True)
 	length= max(len(targets[r]), len(targets[c]))
 	distance = (length-score)/length
+	print target_names[r],target_names[c], distance
+	distanceFile.write( target_names[r],target_names[c], distance )
 	distances.append(distance)
     return distances
 
