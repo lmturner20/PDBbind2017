@@ -18,7 +18,7 @@ HEM hemoglobin? (http://www.bmsc.washington.edu/CrystaLinks/man/pdb/guide2.2_fra
 CYX cystenine C
 CYM cystenine C'''
 
-distanceFile = open('DistanceFile', 'w')
+distanceFile = open('/home/lmt72/PDBbind2017/DistanceFile', 'w')
 
 def getResidueString(structure):
     seq=''
