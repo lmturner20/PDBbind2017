@@ -177,7 +177,7 @@ if __name__ == '__main__':
     else: cnum = args.number*2
     if not args.test_train: args.repeat = False
     outname = args.output
-    if outname =='' : outname = args.input.rsplit(".",1)[0]
+    #if outname =='' : outname = args.input.rsplit(".",1)[0]
     
     p= PDBParser(PERMISSIVE=1,QUIET=1)
     targets=[]
