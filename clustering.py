@@ -35,17 +35,15 @@ def getResidueString(structure):
 
 def calcUpperTriangleOfDistanceMatrix(targets, target_names):
     n = len(targets)
-    nums = []
-    for r in xrange(n):
-	nums.append(r)
-    #pool = Pool()
+    pool = Pool()
     function = partial(cUTDM2, targets, target_names, n)
-    #returnedMatrix = pool.map(function, nums)
-    returnedMatrix = map(function, nums)
+    mapOfTuples = pool.map(function, r in xrange(n))
+    
     distanceMatrix = []
-    for j in returnedMatrix:
-        for k in j:
-            distanceMatrix.append(k)
+    for i in mapOfTuples:
+        distanceMatrix.append(3)
+	for j in i:
+	    print j
     return distanceMatrix
 		
 def cUTDM2(targets, target_names, n, r):
@@ -56,8 +54,8 @@ def cUTDM2(targets, target_names, n, r):
 	distance = (length-score)/length
 	print target_names[r],target_names[c], distance
 	distanceFile.write( target_names[r],target_names[c], distance )
-	distances.append(distance)
-    return distances
+	twoProteinsDistance = (targets[r], targets[c], distance)
+    return twoProteinsDistance
 
 def calcClusterGroups(distanceMatrix, target_names):
     distanceMatrix = np.array(distanceMatrix)
