@@ -40,10 +40,11 @@ def calcUpperTriangleOfDistanceMatrix(targets, target_names):
     mapOfTuples = pool.map(function, r in xrange(n))
     
     distanceMatrix = []
+    distanceFile = open('/home/lmt72/PDBbind2017/DistanceFile.txt', 'w')
     for i in mapOfTuples:
         distanceMatrix.append(3)
 	for j in i:
-	    print j
+	    distanceFile.write(j)
     return distanceMatrix
 		
 def cUTDM2(targets, target_names, n, r):
@@ -53,7 +54,6 @@ def cUTDM2(targets, target_names, n, r):
 	length= max(len(targets[r]), len(targets[c]))
 	distance = (length-score)/length
 	print target_names[r],target_names[c], distance
-	distanceFile.write( target_names[r],target_names[c], distance )
 	twoProteinsDistance = (targets[r], targets[c], distance)
     return twoProteinsDistance
 
