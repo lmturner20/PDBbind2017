@@ -37,7 +37,7 @@ def calcUpperTriangleOfDistanceMatrix(targets, target_names):
     n = len(targets)
     pool = Pool()
     function = partial(cUTDM2, targets, target_names, n)
-    mapOfTuples = pool.map(function, r in xrange(n))
+    mapOfTuples = pool.map(function, xrange(n))
     
     distanceMatrix = []
     distanceFile = open('/home/lmt72/PDBbind2017/DistanceFile.txt', 'w')
