@@ -45,6 +45,7 @@ def calcUpperTriangleOfDistanceMatrix(targets, target_names):
         distanceMatrix.append(3)
 	for j in i:
 	    distanceFile.write(j)
+    distanceFile.close()
     return distanceMatrix
 		
 def cUTDM2(targets, target_names, n, r):
