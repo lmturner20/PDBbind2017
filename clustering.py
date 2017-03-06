@@ -39,9 +39,9 @@ def calcUpperTriangleOfDistanceMatrix(targets, target_names):
     function = partial(cUTDM2, targets, target_names, n)
     mapOfTuples = pool.map(function, xrange(n))
     distanceMatrix = []
-    for i in mapOfTuples:
-        distanceMatrix.append(i[3])
-        distanceFile.write i[1], i[2], i[3]
+    for tup in mapOfTuples:
+        distanceMatrix.append(tup[3])
+        distanceFile.write( tup[1], tup[2], tup[3] )
     distanceFile.close()
     return distanceMatrix
 		
