@@ -18,7 +18,7 @@ HEM hemoglobin? (http://www.bmsc.washington.edu/CrystaLinks/man/pdb/guide2.2_fra
 CYX cystenine C
 CYM cystenine C'''
 
-distanceFile = open('/home/lmt72/PDBbind2017/DistanceFile', 'w')
+#distanceFile = open('/home/lmt72/PDBbind2017/DistanceFile.txt', 'w')
 
 def getResidueString(structure):
     seq=''
@@ -38,7 +38,6 @@ def calcUpperTriangleOfDistanceMatrix(targets, target_names):
     pool = Pool()
     function = partial(cUTDM2, targets, target_names, n)
     mapOfTuples = pool.map(function, xrange(n))
-    
     distanceMatrix = []
     distanceFile = open('/home/lmt72/PDBbind2017/DistanceFile.txt', 'w')
     for i in mapOfTuples:
