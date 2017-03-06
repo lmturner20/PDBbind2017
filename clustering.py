@@ -46,12 +46,12 @@ def calcUpperTriangleOfDistanceMatrix(targets, target_names):
     return distanceMatrix
 		
 def cUTDM2(targets, target_names, n, r):
-    distances = []
     for c in xrange(r+1,n,1):
         score = pairwise2.align.globalxx(targets[r], targets[c], score_only=True)
 	length= max(len(targets[r]), len(targets[c]))
 	distance = (length-score)/length
 	print target_names[r],target_names[c], distance
+	print r
 	twoProteinsDistance = (target_names[r], target_names[c], distance)
     return twoProteinsDistance
 
