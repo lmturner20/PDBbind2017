@@ -15,21 +15,24 @@ def getResidueString(structure):
 		elif resname == 'CYX' or resname == 'CYM': seq+=('C')
 		else: seq+=('X')
 
-p= PDBParser(PERMISSIVE=1,QUIET=1)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i','--input',type=str,required=True
+    p= PDBParser(PERMISSIVE=1,QUIET=1)
 
-firstName = "1pyg"
-secondName = "4ouj"
-firstHandle= "/home/dkoes/PDBbind/general-set-with-refined/1pyg/1pyg_rec.pdb"
-secondHandle= "/home/dkoes/PDBbind/general-set-with-refined/4ouj/4ouj_rec.pdb"
-firstStructure=p.get_structure(firstName,firstHandle)
-secondStructure=p.get_structure(secondName,secondHandle)
-firstSeq=getResidueString(firstStructure)
-secondSeq=getResidueString(secondStructure)
+    file = open(args.input)
+    for line in file.readlines():
+	data= line.split(" ")
+	firstName = data[0]
+        secondName = data[1]
+        firstHandle= ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(firstName))
+        secondHandle= ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(secondName))
+        firstStructure=p.get_structure(firstName,firstHandle)
+        secondStructure=p.get_structure(secondName,secondHandle)
+        firstSeq=getResidueString(firstStructure)
+        secondSeq=getResidueString(secondStructure)
 
-score = pairwise2.align.globalxx(firstSeq, secondSeq, score_only=True)
-length= max(len(firstSeq), len(secondSeq))
-distance = (length-score)/length
-print(firstName, secondName, distance)
-
-#1pyg /home/dkoes/PDBbind/general-set-with-refined/1pyg/1pyg_rec.pdb
-#4ouj /home/dkoes/PDBbind/general-set-with-refined/4ouj/4ouj_rec.pdb
+        score = pairwise2.align.globalxx(firstSeq, secondSeq, score_only=True)
+        length= max(len(firstSeq), len(secondSeq))
+        distance = (length-score)/length
+        print firstName, secondName, distance
