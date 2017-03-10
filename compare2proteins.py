@@ -1,3 +1,4 @@
+from Bio.PDB.PDBParser import PDBParser
 p= PDBParser(PERMISSIVE=1,QUIET=1)
 
 firstName = "1pyg"
