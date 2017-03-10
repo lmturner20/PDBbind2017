@@ -1,3 +1,5 @@
+p= PDBParser(PERMISSIVE=1,QUIET=1)
+
 firstName = "1pyg"
 secondName = "4ouj"
 firstHandle= "/home/dkoes/PDBbind/general-set-with-refined/1pyg/1pyg_rec.pdb"
