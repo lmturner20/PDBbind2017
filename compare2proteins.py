@@ -1,4 +1,17 @@
 from Bio.PDB.PDBParser import PDBParser
+
+def getResidueString(structure):
+    seq=''
+    for model in structure:
+	for residue in model.get_residues():
+	    if is_aa(residue.get_resname(), standard=True):
+		seq+=(three_to_one(residue.get_resname()))
+	    else:
+		resname = residue.get_resname()
+		if resname == 'HIE' or resname == 'HID': seq+=('H')
+		elif resname == 'CYX' or resname == 'CYM': seq+=('C')
+		else: seq+=('X')
+
 p= PDBParser(PERMISSIVE=1,QUIET=1)
 
 firstName = "1pyg"
