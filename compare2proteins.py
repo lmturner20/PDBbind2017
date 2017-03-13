@@ -17,7 +17,7 @@ def getResidueString(structure):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i','--input',type=str,required=True
+    parser.add_argument('-i','--input',type=str,required=True)
     p= PDBParser(PERMISSIVE=1,QUIET=1)
 
     file = open(args.input)
