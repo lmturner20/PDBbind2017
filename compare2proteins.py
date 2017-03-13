@@ -28,8 +28,8 @@ if __name__ == '__main__':
 	data= line.split(" ")
 	firstName = data[0]
         secondName = data[1]
-        firstHandle= ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(firstName))
-        secondHandle= ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(secondName))
+        firstHandle= ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(firstName, firstName))
+        secondHandle= ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(secondName, secondName))
         firstStructure=p.get_structure(firstName,firstHandle)
         secondStructure=p.get_structure(secondName,secondHandle)
         firstSeq=getResidueString(firstStructure)
