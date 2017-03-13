@@ -3,6 +3,7 @@ from Bio.PDB.Polypeptide import is_aa
 from Bio.PDB.Polypeptide import three_to_one
 from Bio import pairwise2
 import argparse
+import sys
 
 def getResidueString(structure):
     seq=''
@@ -19,6 +20,7 @@ def getResidueString(structure):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-i','--input',type=str,required=True)
+    aregs = parser.parse_args()
     p= PDBParser(PERMISSIVE=1,QUIET=1)
 
     file = open(args.input)
