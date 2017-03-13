@@ -8,9 +8,9 @@ import sys
 def getResidueString(structure):
     seq=''
     for model in structure:
-	for residue in model.get_residues():
-	    if is_aa(residue.get_resname(), standard=True):
-		seq+=(three_to_one(residue.get_resname()))
+        for residue in model.get_residues():
+            if is_aa(residue.get_resname(), standard=True):
+                seq+=(three_to_one(residue.get_resname()))
 	    else:
 		resname = residue.get_resname()
 		if resname == 'HIE' or resname == 'HID': seq+=('H')
@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     f = open(args.input)
     for line in f:
-        data= line.split(" ")
+        data= line.split("")
         firstName = data[0]
         secondName = data[1]
         firstHandle= ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(firstName, firstName))
