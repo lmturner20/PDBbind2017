@@ -2,6 +2,7 @@ from Bio.PDB.PDBParser import PDBParser
 from Bio.PDB.Polypeptide import is_aa
 from Bio.PDB.Polypeptide import three_to_one
 from Bio import pairwise2
+import argparse
 
 def getResidueString(structure):
     seq=''
