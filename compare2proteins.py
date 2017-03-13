@@ -23,10 +23,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
     p= PDBParser(PERMISSIVE=1,QUIET=1)
 
-    file = open(args.input)
-    for line in file.readlines():
-	data= line.split(" ")
-	firstName = data[0]
+    f = open(args.input)
+    for line in f:
+        data= line.split(" ")
+        firstName = data[0]
         secondName = data[1]
         firstHandle= ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(firstName, firstName))
         secondHandle= ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(secondName, secondName))
