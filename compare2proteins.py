@@ -16,6 +16,7 @@ def getResidueString(structure):
 		if resname == 'HIE' or resname == 'HID': seq+=('H')
 		elif resname == 'CYX' or resname == 'CYM': seq+=('C')
 		else: seq+=('X')
+    return seq
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
