@@ -31,7 +31,7 @@ if __name__ == '__main__':
     seq=getResidueString(structure)
 
     for secondHandle in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
-        data= line.split("/")
+        data= secondHandle.split("/")
         secondName = data[7]
         secondStructure = p.get_structure(secondName, secondHandle)
         secondSeq=getResidueString(secondStructure)
