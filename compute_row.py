@@ -37,4 +37,4 @@ if __name__ == '__main__':
         score = pairwise2.align.globalxx(seq, secondSeq, score_only=True)
         length= max(len(seq), len(secondSeq))
         distance = (length-score)/length
-        print distance
+        print distance,
