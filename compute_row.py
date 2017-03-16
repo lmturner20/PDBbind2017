@@ -21,11 +21,13 @@ def getResidueString(structure):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    #args = parser.parse_args()
+    parser.add_argument('-i','--input',type=str,required=True)
+    args = parser.parse_args()
     p= PDBParser(PERMISSIVE=1,QUIET=1)
+	
     print str(sys.argv[1])
     #name = sys.argv[1]
-    name = parser.parse_args()
+    name = args.input
     handle = ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(name, name))
     structure = p.get_structure(name, handle)
     seq=getResidueString(structure)
