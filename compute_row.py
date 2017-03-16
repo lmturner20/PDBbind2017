@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
     for secondHandle in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
         data= secondHandle.split("/")
-        secondName = data[7]
+        secondName = data[4]
         secondStructure = p.get_structure(secondName, secondHandle)
         secondSeq=getResidueString(secondStructure)
         score = pairwise2.align.globalxx(seq, secondSeq, score_only=True)
