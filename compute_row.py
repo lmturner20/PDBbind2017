@@ -23,8 +23,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     #args = parser.parse_args()
     p= PDBParser(PERMISSIVE=1,QUIET=1)
-    
-
+    print str(sys.argv[1])
     #name = sys.argv[1]
     name = parser.parse_args()
     handle = ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(name, name))
