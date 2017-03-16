@@ -31,10 +31,11 @@ if __name__ == '__main__':
     seq=getResidueString(structure)
 
     for secondHandle in glob.glob('/home/koes/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
-        secondName = secondHandle[50:54]
+        data= line.split("/")
+        secondName = data[7]
         secondStructure = p.get_structure(secondName, secondHandle)
         secondSeq=getResidueString(secondStructure)
         score = pairwise2.align.globalxx(seq, secondSeq, score_only=True)
         length= max(len(seq), len(secondSeq))
         distance = (length-score)/length
-        print distance,
+        print secondName, distance
