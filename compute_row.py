@@ -24,9 +24,7 @@ if __name__ == '__main__':
     parser.add_argument('-i','--input',type=str,required=True)
     args = parser.parse_args()
     p= PDBParser(PERMISSIVE=1,QUIET=1)
-	
-    print str(sys.argv[1])
-    #name = sys.argv[1]
+
     name = args.input
     handle = ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(name, name))
     structure = p.get_structure(name, handle)
@@ -35,6 +33,7 @@ if __name__ == '__main__':
     for secondHandle in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
         secondName = secondHandle[50:54]
         secondStructure = p.get_structure(secondName, secondHandle)
+        secondSeq=getResidueString(secondStructure)
         score = pairwise2.align.globalxx(seq, secondSeq, score_only=True)
         length= max(len(seq), len(secondSeq))
         distance = (length-score)/length
