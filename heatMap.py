@@ -26,7 +26,7 @@ D = npArray[l1]
 Z2 = sch.linkage(npArray.T,method='average')
 l2 = sch.leaves_list(Z2)
 D = D[:,l2]
-D.astype(float64)
+D.astype(float)
 
 fig = plt.figure(figsize=(8,8))
 ax1 = fig.add_axes([0.09,0.1,0.2,0.6])
