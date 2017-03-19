@@ -29,13 +29,13 @@ D = D[:,l2]
 
 fig = plt.figure(figsize=(8,8))
 ax1 = fig.add_axes([0.09,0.1,0.2,0.6])
-z1 = hclust.dendrogram(Z1,orientation='left',labels=names[l1])
+z1 = sch.dendrogram(Z1,orientation='left',labels=names[l1])
 ax1.set_xticks([])
 ax1.set_yticks([])
 
 # Compute and plot second dendrogram.
 ax2 = fig.add_axes([0.3,0.71,0.6,0.15])
-z2 = hclust.dendrogram(Z2,labels=cells[l2])
+z2 = sch.dendrogram(Z2,labels=cells[l2])
 ax2.set_xticks([])
 ax2.set_yticks([])
 
