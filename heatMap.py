@@ -15,4 +15,4 @@ for protein in proteinFile:
         distances.append(distance)
     a.append(distances)
     distances=[]
-#npArray = np.array(a)
+npArray = np.array(a)
