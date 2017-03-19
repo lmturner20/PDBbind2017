@@ -22,11 +22,10 @@ for protein in proteinFile:
 npArray = np.array(a)
 Z1 = sch.linkage(npArray,method='average')
 l1 = sch.leaves_list(Z1)
-D = npArray[l1]
+D = (npArray[l1], dtype= 'f')
 Z2 = sch.linkage(npArray.T,method='average')
 l2 = sch.leaves_list(Z2)
 D = D[:,l2]
-D.astype(float)
 
 fig = plt.figure(figsize=(8,8))
 ax1 = fig.add_axes([0.09,0.1,0.2,0.6])
