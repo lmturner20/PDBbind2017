@@ -17,9 +17,9 @@ for protein in proteinFile:
     a.append(distances)
     distances=[]
 npArray = np.array(a)
-np.set_printoptions(threshold=np.inf,precision=2)
-print npArray
-Z1 = sch.average(npArray)
-print Z1
-Z1= sch.leaves_list(npArray)
-print Z1
+Z1 = hclust.linkage(npArray,method='average')
+l1 = hclust.leaves_list(Z1)
+D = npArray[l1]
+Z2 = hclust.linkage(npArray.T,method='average')
+l2 = hclust.leaves_list(Z2)
+D = D[:,l2]
