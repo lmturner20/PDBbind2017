@@ -20,4 +20,5 @@ npArray = np.array(a)
 np.set_printoptions(threshold=np.inf,precision=2)
 print npArray
 npArray = hac.average(npArray)
-print npArray
+z = hac.linkage(npArray, method="single")
+print z
