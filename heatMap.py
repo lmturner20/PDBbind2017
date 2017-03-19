@@ -16,3 +16,4 @@ for protein in proteinFile:
     a.append(distances)
     distances=[]
 npArray = np.array(a)
+print npArray
