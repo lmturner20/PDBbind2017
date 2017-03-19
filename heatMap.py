@@ -22,4 +22,4 @@ print npArray
 npArray = sch.average(npArray)
 print npArray
 npArray = sch.leaves_list(npArray)
-print z1
+print npArray
