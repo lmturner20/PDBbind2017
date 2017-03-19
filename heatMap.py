@@ -17,4 +17,7 @@ for protein in proteinFile:
     a.append(distances)
     distances=[]
 npArray = np.array(a)
+np.set_printoptions(threshold=np.inf,precision=2)
+print npArray
 npArray = hac.average(npArray)
+print npArray
