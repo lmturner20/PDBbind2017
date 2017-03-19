@@ -1,6 +1,6 @@
 import array
 import numpy as np
-import scipy.cluster.hierarchy as hac
+import scipy.cluster.hierarchy as sch
 
 proteinFile = open('/home/lmt72/PDBbind2017/BabySet')
 distances = []
@@ -19,7 +19,7 @@ for protein in proteinFile:
 npArray = np.array(a)
 np.set_printoptions(threshold=np.inf,precision=2)
 print npArray
-npArray = hac.average(npArray)
+npArray = sch.average(npArray)
 print npArray
-z1 = hac.linkage(npArray, method="single")
+npArray = sch.leaves_list(npArray)
 print z1
