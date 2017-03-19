@@ -9,7 +9,7 @@ for protein in proteinFile:
     filename = "/home/lmt72/PDBdistances/"+protein+".distances"
     distanceFile = open(filename)
     for line in distanceFile:
-        data= line.split("")
+        data= line.split()
         secondProtein = data[0]
         distance = data[1].strip()
         distances.append(distance)
