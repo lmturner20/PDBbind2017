@@ -2,12 +2,12 @@ import array
 import numpy as np
 import scipy.cluster.hierarchy as hac
 
-proteinFile = open('/home/lmt72/PDBbind2017/TinySet')
+proteinFile = open('/home/lmt72/PDBbind2017/BabySet')
 distances = []
 a = []
 for protein in proteinFile:
     protein = protein.strip()
-    filename = "/home/lmt72/PDBdistances/"+protein+".distances"
+    filename = "/home/lmt72/PDBbind2017/"+protein+".distances"
     distanceFile = open(filename)
     for line in distanceFile:
         data= line.split()
