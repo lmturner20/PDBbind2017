@@ -2,7 +2,7 @@ import array
 import numpy as np
 import scipy.cluster.hierarchy as sch
 import matplotlib.pylab as plt
-matplotlib.use('Agg')
+plt.use('Agg')
 
 proteinFile = open('/home/lmt72/PDBbind2017/BabySet')
 distances = []
