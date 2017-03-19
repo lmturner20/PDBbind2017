@@ -22,4 +22,4 @@ print npArray
 npArray = hac.average(npArray)
 print npArray
 z1 = hac.linkage(npArray, method="single")
-print z
+print z1
