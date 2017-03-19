@@ -19,7 +19,7 @@ for protein in proteinFile:
 npArray = np.array(a)
 np.set_printoptions(threshold=np.inf,precision=2)
 print npArray
-npArray = sch.average(npArray)
-print npArray
-npArray = sch.leaves_list(npArray)
-print npArray
+Z1 = sch.average(npArray)
+print Z1
+leaves= sch.leaves_list(npArray)
+print leaves
