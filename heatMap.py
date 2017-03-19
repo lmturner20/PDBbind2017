@@ -21,5 +21,5 @@ np.set_printoptions(threshold=np.inf,precision=2)
 print npArray
 Z1 = sch.average(npArray)
 print Z1
-leaves= sch.leaves_list(npArray)
-print leaves
+Z1= sch.leaves_list(npArray)
+print Z1
