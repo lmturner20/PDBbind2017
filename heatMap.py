@@ -6,7 +6,7 @@ distances = []
 a = []
 for protein in proteinFile:
     protein = protein.strip()
-    filename = "/home/dkoes/PDBdistances/"+protein+".distances"
+    filename = "/home/lmt72/PDBdistances/"+protein+".distances"
     distanceFile = open(filename)
     for line in distanceFile:
         data= line.split("")
