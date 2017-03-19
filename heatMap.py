@@ -1,5 +1,6 @@
 import array
 import numpy as np
+import scipy.cluster.hierarchy as hac
 
 proteinFile = open('/home/lmt72/PDBbind2017/TinySet')
 distances = []
@@ -16,4 +17,4 @@ for protein in proteinFile:
     a.append(distances)
     distances=[]
 npArray = np.array(a)
-print npArray
+npArray = hac.average(npArray)
