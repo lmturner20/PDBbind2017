@@ -1,12 +1,12 @@
 import array
 import numpy as np
 
-proteinFile = open('/home/lmt72/PDBbind2017/tiny-set')
+proteinFile = open('/home/lmt72/PDBbind2017/TinySet')
 distances = []
 a = []
 for protein in proteinFile:
     protein = protein.strip()
-    filename = "/home/dkoes/PDBbind/general-set-with-refined"+protein+"/"+protein+".distances"
+    filename = "/home/dkoes/PDBdistances/"+protein+".distances"
     distanceFile = open(filename)
     for line in distanceFile:
         data= line.split("")
