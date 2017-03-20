@@ -4,6 +4,7 @@ import scipy.cluster.hierarchy as sch
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pylab as plt
+from PIL import Image
 
 proteinFile = open('/home/lmt72/PDBbind2017/BabySet')
 distances = []
