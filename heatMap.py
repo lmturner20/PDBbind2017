@@ -42,7 +42,7 @@ ax2.set_yticks([])
 
 # Plot distance matrix.
 axmatrix = fig.add_axes([0.3,0.1,0.6,0.6])
-im = axmatrix.matshow(D, aspect='auto', origin='lower')
+plt.matshow(D, aspect='auto', origin='lower')
 
 fig.subplots_adjust(bottom=0.1)
 axcolor = fig.add_axes([0.3,0.07,0.6,0.02])
