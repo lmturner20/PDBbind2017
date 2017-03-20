@@ -44,6 +44,7 @@ ax2.set_yticks([])
 # Plot distance matrix.
 axmatrix = fig.add_axes([0.3,0.1,0.6,0.6])
 plt.matshow(D, aspect='auto', origin='lower')
+plt.imshow(asarray(D, dtype=np.dtype(np.int32))),
 
 fig.subplots_adjust(bottom=0.1)
 axcolor = fig.add_axes([0.3,0.07,0.6,0.02])
