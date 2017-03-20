@@ -16,7 +16,7 @@ for protein in proteinFile:
     for line in distanceFile:
         data= line.split()
         secondProtein = data[0]
-        distance = data[1].strip()
+        distance = float(data[1].strip())
         distances.append(distance)
     a.append(distances)
     distances=[]
