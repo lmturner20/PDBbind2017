@@ -22,7 +22,7 @@ for protein in proteinFile:
 npArray = np.array(a)
 Z1 = sch.linkage(npArray,method='average')
 l1 = sch.leaves_list(Z1)
-D = (npArray[l1], dtype= 'f')
+D = (npArray[l1])
 Z2 = sch.linkage(npArray.T,method='average')
 l2 = sch.leaves_list(Z2)
 D = D[:,l2]
