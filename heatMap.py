@@ -27,7 +27,7 @@ D = (npArray[l1])
 Z2 = sch.linkage(npArray.T,method='average')
 l2 = sch.leaves_list(Z2)
 D = D[:,l2]
-print D
+print D.dtype
 
 fig = plt.figure(figsize=(8,8))
 ax1 = fig.add_axes([0.09,0.1,0.2,0.6])
@@ -43,7 +43,6 @@ ax2.set_yticks([])
 
 # Plot distance matrix.
 axmatrix = fig.add_axes([0.3,0.1,0.6,0.6])
-plt.imshow(asarray(D, dtype=np.dtype(np.int32))),
 plt.matshow(D, aspect='auto', origin='lower')
 
 fig.subplots_adjust(bottom=0.1)
