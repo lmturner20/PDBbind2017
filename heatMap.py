@@ -20,10 +20,10 @@ for protein in proteinFile:
         distances.append(distance)
     a.append(distances)
     distances=[]
-npArray = np.array(a)
+npArray = np.array(a, dtype=int16)
 Z1 = sch.linkage(npArray,method='average')
 l1 = sch.leaves_list(Z1)
-D = (npArray[l1], dtype=int16)
+D = (npArray[l1])
 Z2 = sch.linkage(npArray.T,method='average')
 l2 = sch.leaves_list(Z2)
 D = D[:,l2]
