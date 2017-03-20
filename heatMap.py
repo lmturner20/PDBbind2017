@@ -19,10 +19,10 @@ for protein in proteinFile:
         secondProtein = data[0]
         distance = float(data[1].strip())
         distances.append(distance)
-        print distance
     a.append(distances)
     distances=[]
 npArray = np.array(a)
+print npArray
 Z1 = sch.linkage(npArray,method='average')
 l1 = sch.leaves_list(Z1)
 D = (npArray[l1])
