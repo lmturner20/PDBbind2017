@@ -6,6 +6,7 @@ matplotlib.use('Agg')
 import matplotlib.pylab as plt
 from PIL import Image
 import sys
+import fastcluster as fcl
 
 #a = [12482][12842]
 dict = {}
@@ -24,10 +25,10 @@ for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.
         a(dict.get(secondProten),dict.get(pdb)) = distance
 
 #npArray = np.array(a)
-Z1 = sch.linkage(npArray,method='average')
+Z1 = fcl.linkage(npArray,method='average')
 l1 = sch.leaves_list(Z1)
 D = (npArray[l1])
-Z2 = sch.linkage(npArray.T,method='average')
+Z2 = fcl.linkage(npArray.T,method='average')
 l2 = sch.leaves_list(Z2)
 D = D[:,l2]
 
