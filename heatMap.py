@@ -7,6 +7,7 @@ import matplotlib.pylab as plt
 from PIL import Image
 import sys
 import fastcluster as fcl
+import glob
 
 #a = [12482][12842]
 dict = {}
