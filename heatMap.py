@@ -21,8 +21,8 @@ for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.
         data= line.split()
         secondProtein = data[0]
         distance = float(data[1].strip())
-        a(dict.get(pdb),dict.get(secondProtein)) = distance
-        a(dict.get(secondProten),dict.get(pdb)) = distance
+        a[dict.get(pdb),dict.get(secondProtein)] = distance
+        a[dict.get(secondProtein),dict.get(pdb)] = distance
 
 #npArray = np.array(a)
 Z1 = fcl.linkage(npArray,method='average')
