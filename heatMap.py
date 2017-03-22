@@ -14,7 +14,7 @@ for (i,fname) in enumerate(glob.glob('*.distances')):
     dict[pdb] = i
 a = np.zeros(dict.len(),dict.len())
     #filename = "/home/lmt72/PDBdistances/"+pdb+".distances"
-for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb')
+for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
     distanceFile = open(filename)
     for line in distanceFile:
         data= line.split()
