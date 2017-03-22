@@ -7,23 +7,23 @@ import matplotlib.pylab as plt
 from PIL import Image
 import sys
 
-distances = []
-a = [12482]
-index = dict()
+#a = [12482][12842]
+dict = {}
 for (i,fname) in enumerate(glob.glob('*.distances')):
     pdb = fname.rstrip('.distances')
-    index[pdb] = i
-    filename = "/home/lmt72/PDBdistances/"+pdb+".distances"
+    dict[pdb] = i
+a = np.zeros(dict.len(),dict.len())
+    #filename = "/home/lmt72/PDBdistances/"+pdb+".distances"
+for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb')
     distanceFile = open(filename)
     for line in distanceFile:
         data= line.split()
         secondProtein = data[0]
         distance = float(data[1].strip())
-        distances.append(distance)
-    a.append(distances)
-    distances=[]
-npArray = np.array(a)
-print npArray
+        a(dict.get(pdb),dict.get(secondProtein)) = distance
+        a(dict.get(secondProten),dict.get(pdb)) = distance
+
+#npArray = np.array(a)
 Z1 = sch.linkage(npArray,method='average')
 l1 = sch.leaves_list(Z1)
 D = (npArray[l1])
