@@ -7,12 +7,13 @@ import matplotlib.pylab as plt
 from PIL import Image
 import sys
 
-proteinFile = open('/home/lmt72/PDBbind2017/GenWRef')
 distances = []
-a = []
-for protein in proteinFile:
-    protein = protein.strip()
-    filename = "/home/lmt72/PDBdistances/"+protein+".distances"
+a = [12482]
+index = dict()
+for (i,fname) in enumerate(glob.glob('*.distances')):
+    pdb = fname.rstrip('.distances')
+    index[pdb] = i
+    filename = "/home/lmt72/PDBdistances/"+pdb+".distances"
     distanceFile = open(filename)
     for line in distanceFile:
         data= line.split()
