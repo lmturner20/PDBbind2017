@@ -1,11 +1,8 @@
-import array
 import numpy as np
 import scipy.cluster.hierarchy as sch
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pylab as plt
-from PIL import Image
-import sys
 import fastcluster as fcl
 import glob
 
@@ -15,7 +12,7 @@ for (i,fname) in enumerate(glob.glob('*.distances')):
     pdb = fname.rstrip('.distances')
     dict[pdb] = i
 length = len(dict)
-a = np.zeros(length,length)
+npArray = np.zeros(3,3)
     #filename = "/home/lmt72/PDBdistances/"+pdb+".distances"
 for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
     distanceFile = open(filename)
@@ -23,8 +20,8 @@ for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.
         data= line.split()
         secondProtein = data[0]
         distance = float(data[1].strip())
-        a[dict.get(pdb),dict.get(secondProtein)] = distance
-        a[dict.get(secondProtein),dict.get(pdb)] = distance
+        npArray[dict.get(pdb),dict.get(secondProtein)] = distance
+        npArray[dict.get(secondProtein),dict.get(pdb)] = distance
 
 #npArray = np.array(a)
 Z1 = fcl.linkage(npArray,method='average')
