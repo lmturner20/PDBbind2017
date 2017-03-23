@@ -8,7 +8,7 @@ import glob
 
 #a = [12482][12842]
 dict = {}
-for (i,fname) in enumerate(glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*.distances')):
+for (i,fname) in enumerate(glob.glob('/home/dkoes/PDBdistances/*.distances')):
     pdb = fname.rstrip('.distances')
     dict[pdb] = i
 length = len(dict)
