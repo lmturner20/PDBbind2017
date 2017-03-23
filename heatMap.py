@@ -10,8 +10,8 @@ import glob
 dict = {}
 for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
     pdb = fname.rstrip('.distances')
-    dict[pdb] = i
-length = len(dict)
+    index[pdb] = i
+length = len(index)
 print length
 npArray = np.zeros((length,length))
     #filename = "/home/lmt72/PDBdistances/"+pdb+".distances"
