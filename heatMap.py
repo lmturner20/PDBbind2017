@@ -6,11 +6,11 @@ import matplotlib.pylab as plt
 import fastcluster as fcl
 import glob
 
-index = {}
+index = dict()
 for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
-    if fname.endswith('.distances')
-    pdb = fname.[:-10]
-    index[pdb] = i
+    if fname.endswith('.distances'):
+        pdb = fname.[:-10]
+        index[pdb] = i
 length = len(index)
 print length
 npArray = np.zeros((length,length))
