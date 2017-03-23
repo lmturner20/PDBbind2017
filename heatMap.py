@@ -9,7 +9,7 @@ import glob
 index = dict()
 for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
     if fname.endswith('.distances'):
-        pdb = fname.[:-10]
+        pdb = fname[:-10]
         index[pdb] = i
 length = len(index)
 print length
