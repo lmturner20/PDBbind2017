@@ -6,15 +6,13 @@ import matplotlib.pylab as plt
 import fastcluster as fcl
 import glob
 
-#a = [12482][12842]
-dict = {}
+index = {}
 for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
     pdb = fname.rstrip('.distances')
     index[pdb] = i
 length = len(index)
 print length
 npArray = np.zeros((length,length))
-    #filename = "/home/lmt72/PDBdistances/"+pdb+".distances"
 for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
     distanceFile = open(filename)
     for line in distanceFile:
@@ -24,7 +22,6 @@ for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.
         npArray[index.get(pdb),index.get(secondProtein)] = distance
         npArray[index.get(secondProtein),index.get(pdb)] = distance
 
-#npArray = np.array(a)
 Z1 = fcl.linkage(npArray,method='average')
 l1 = sch.leaves_list(Z1)
 D = (npArray[l1])
