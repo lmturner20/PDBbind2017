@@ -8,7 +8,8 @@ import glob
 
 index = {}
 for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
-    pdb = fname.rstrip('.distances')
+    if fname.endswith('.distances')
+    pdb = fname.[:-10]
     index[pdb] = i
 length = len(index)
 print length
