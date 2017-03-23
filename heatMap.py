@@ -5,6 +5,7 @@ matplotlib.use('Agg')
 import matplotlib.pylab as plt
 import fastcluster as fcl
 import glob
+import os
 
 index = dict()
 for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
