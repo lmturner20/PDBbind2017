@@ -8,6 +8,7 @@ import fastcluster as fcl
 import glob
 import os
 import cPickle
+import PIL
 
 index = dict()
 for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
