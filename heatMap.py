@@ -12,6 +12,7 @@ for (i,fname) in enumerate(glob.glob('*.distances')):
     pdb = fname.rstrip('.distances')
     dict[pdb] = i
 length = len(dict)
+print length
 npArray = np.zeros((length,length))
     #filename = "/home/lmt72/PDBdistances/"+pdb+".distances"
 for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
