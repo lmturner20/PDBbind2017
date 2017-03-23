@@ -3,9 +3,11 @@ import scipy.cluster.hierarchy as sch
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pylab as plt
+from matplotlib import cm
 import fastcluster as fcl
 import glob
 import os
+import cPickle
 
 index = dict()
 for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
@@ -31,7 +33,9 @@ D = (npArray[l1])
 Z2 = fcl.linkage(npArray.T,method='average')
 l2 = sch.leaves_list(Z2)
 D = D[:,l2]
+cPickle.dump((npArray,D,Z1,names),open("clusterstate.pickle",'w'),-1)
 
+(npArray,D,Z1,names) = cPickle.load(open("clusterstate.pickle"))
 fig = plt.figure(figsize=(8,8))
 ax1 = fig.add_axes([0.09,0.1,0.2,0.6])
 ax1.set_xticks([])
@@ -44,7 +48,7 @@ ax2.set_yticks([])
 
 # Plot distance matrix.
 axmatrix = fig.add_axes([0.3,0.1,0.6,0.6])
-im = plt.matshow(D, aspect='auto', origin='lower')
+im = PIL.Image.fromarray(cm.gist_earth(D,bytes=True))
 
 fig.subplots_adjust(bottom=0.1)
 axcolor = fig.add_axes([0.3,0.07,0.6,0.02])
