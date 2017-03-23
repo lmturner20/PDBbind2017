@@ -13,11 +13,10 @@ for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
     if fname.endswith('.distances'):
         pdb = fname[:-10]
         index[pdb] = i
-print pdb
 length = len(index)
 print length
 npArray = np.zeros((length,length))
-for filename in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
+for filename in glob.glob('/home/lmt72/PDBdistances/*.distances'):
     distanceFile = open(filename)
     for line in distanceFile:
         data= line.split()
