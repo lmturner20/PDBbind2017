@@ -57,4 +57,5 @@ im = PIL.Image.fromarray(cm.gist_earth(D,bytes=True))
 
 fig.subplots_adjust(bottom=0.1)
 axcolor = fig.add_axes([0.3,0.07,0.6,0.02])
+fig.colorbar(im,cax=axcolor,orientation='horizontal')
 plt.savefig('heatmap',dpi=600)
