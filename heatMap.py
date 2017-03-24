@@ -41,7 +41,6 @@ D = D[:,l2]
 cPickle.dump((npArray,D, Z1, names),open("clusterstate.pickle",'w'),-1)
 
 (npArray, D, Z1, names) = cPickle.load(open("clusterstate.pickle"))
-ax1 = fig.add_axes([0.09,0.1,0.2,0.6])
 ax1.set_xticks([])
 ax1.set_yticks([])
 
