@@ -23,7 +23,6 @@ for filename in glob.glob('/home/lmt72/PDBdistances/*.distances'):
     filename = os.path.basename(filename)
     if filename.endswith('.distances'):
         pdb = filename[:-10]
-        print pdb
     for line in distanceFile:
         data= line.split()
         secondProtein = data[0]
