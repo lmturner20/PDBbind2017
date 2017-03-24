@@ -1,8 +1,14 @@
-import numpy
+import numpy as np
+import scipy.cluster.hierarchy as sch
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pylab as plt
+from matplotlib import cm
+import fastcluster as fcl
+import glob
+import os
 import cPickle
 import PIL
-import matplotlib
-from matplotlib import cm
 
 (npArray, D, Z1, names) = cPickle.load(open("clusterstate.pickle"))
 im = PIL.Image.fromarray(cm.gist_earth(D,bytes=True))
