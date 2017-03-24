@@ -11,5 +11,5 @@ import cPickle
 import PIL
 
 (npArray, D, Z1, names) = cPickle.load(open("clusterstate.pickle"))
-im = PIL.Image.fromarray(cm.seismic(D,bytes=True))
+im = PIL.Image.fromarray(cm.gist_rainbow(D,bytes=True))
 im.save('heatmap.png')
