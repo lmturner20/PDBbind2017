@@ -34,6 +34,7 @@ for filename in glob.glob('/home/lmt72/PDBdistances/*.distances'):
 names = ['' for x in xrange(length)]
 for (name,i) in index.iteritems():
     names[i] = name
+print npArray
 
 Z1 = fcl.linkage(npArray,method='average')
 l1 = sch.leaves_list(Z1)
@@ -41,5 +42,4 @@ D = (npArray[l1])
 Z2 = fcl.linkage(npArray.T,method='average')
 l2 = sch.leaves_list(Z2)
 D = D[:,l2]
-print D
 cPickle.dump((npArray,D, Z1, names),open("clusterstate.pickle",'w'),-1)
