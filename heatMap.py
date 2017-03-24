@@ -20,9 +20,9 @@ length = len(index)
 print length
 npArray = np.zeros((length,length))
 for filename in glob.glob('/home/lmt72/PDBdistances/*.distances'):
-    fname = os.path.basename(fname)
-    if fname.endswith('.distances'):
-        pdb = fname[:-10]
+    filename = os.path.basename(filename)
+    if filename.endswith('.distances'):
+        pdb = filename[:-10]
         print pdb
     distanceFile = open(filename)
     for line in distanceFile:
