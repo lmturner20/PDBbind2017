@@ -17,7 +17,6 @@ for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
         pdb = fname[:-10]
         index[pdb] = i
 length = len(index)
-print length
 npArray = np.zeros((length,length))
 for filename in glob.glob('/home/lmt72/PDBdistances/*.distances'):
     distanceFile = open(filename)
