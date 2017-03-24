@@ -40,7 +40,3 @@ l2 = sch.leaves_list(Z2)
 D = D[:,l2]
 print D
 cPickle.dump((npArray,D, Z1, names),open("clusterstate.pickle",'w'),-1)
-
-(npArray, D, Z1, names) = cPickle.load(open("clusterstate.pickle"))
-im = PIL.Image.fromarray(cm.gist_earth(D,bytes=True))
-im.save('heatmap.png')
