@@ -20,11 +20,11 @@ length = len(index)
 print length
 npArray = np.zeros((length,length))
 for filename in glob.glob('/home/lmt72/PDBdistances/*.distances'):
+    distanceFile = open(filename)
     filename = os.path.basename(filename)
     if filename.endswith('.distances'):
         pdb = filename[:-10]
         print pdb
-    distanceFile = open(filename)
     for line in distanceFile:
         data= line.split()
         secondProtein = data[0]
