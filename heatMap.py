@@ -15,7 +15,7 @@ for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances/*.distances')):
     fname = os.path.basename(fname)
     if fname.endswith('.distances'):
         pdb = fname[:-10]
-        index[secondProtein] = i
+        index[pdb] = i
 length = len(index)
 print length
 npArray = np.zeros((length,length))
@@ -25,7 +25,7 @@ for filename in glob.glob('/home/lmt72/PDBdistances/*.distances'):
         data= line.split()
         secondProtein = data[0]
         distance = float(data[1].strip())
-        i = index[pdb]
+        i = index[secondProtein]
         npArray[i,index[secondProtein]] = distance
         npArray[index[secondProtein],i] = distance
 names = ['' for x in xrange(length)]
