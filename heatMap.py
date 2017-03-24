@@ -20,12 +20,15 @@ length = len(index)
 print length
 npArray = np.zeros((length,length))
 for filename in glob.glob('/home/lmt72/PDBdistances/*.distances'):
+    fname = os.path.basename(fname)
+    if fname.endswith('.distances'):
+        pdb = fname[:-10]
     distanceFile = open(filename)
     for line in distanceFile:
         data= line.split()
         secondProtein = data[0]
         distance = float(data[1].strip())
-        i = index[secondProtein]
+        i = index[pdb]
         npArray[i,index[secondProtein]] = distance
         npArray[index[secondProtein],i] = distance
 names = ['' for x in xrange(length)]
