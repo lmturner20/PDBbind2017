@@ -41,13 +41,5 @@ D = D[:,l2]
 cPickle.dump((npArray,D, Z1, names),open("clusterstate.pickle",'w'),-1)
 
 (npArray, D, Z1, names) = cPickle.load(open("clusterstate.pickle"))
-ax1.set_xticks([])
-ax1.set_yticks([])
-
-# Compute and plot second dendrogram.
-ax2.set_xticks([])
-ax2.set_yticks([])
-
-# Plot distance matrix.
 im = PIL.Image.fromarray(cm.gist_earth(D,bytes=True))
 im.savefig('heatmap',dpi=600)
