@@ -1,6 +1,7 @@
 import numpy
 import cPickle
 import PIL
+import matplotlib
 from matplotlib import cm
 
 (npArray, D, Z1, names) = cPickle.load(open("clusterstate.pickle"))
