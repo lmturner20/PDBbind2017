@@ -42,4 +42,4 @@ cPickle.dump((npArray,D, Z1, names),open("clusterstate.pickle",'w'),-1)
 
 (npArray, D, Z1, names) = cPickle.load(open("clusterstate.pickle"))
 im = PIL.Image.fromarray(cm.gist_earth(D,bytes=True))
-im.savefig('heatmap',dpi=600)
+im.save('heatmap.png')
