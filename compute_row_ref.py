@@ -34,7 +34,7 @@ if __name__ == '__main__':
             secondName = data[5]
             secondStructure = p.get_structure(secondName, secondHandle)
             secondSeq=getResidueString(secondStructure)
-            score =  pairwise2.align.localdx(v, w, matlist.blosum62, score_only=True)
+            score =  pairwise2.align.localdx(seq, secondSeq, matlist.blosum62, score_only=True)
             length= max(len(seq), len(secondSeq))
             distance = (length-score)/length
             fname = "/home/lmt72/PDBdistancesRef"+name+".distances"
