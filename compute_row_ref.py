@@ -22,12 +22,12 @@ def getResidueString(structure):
     return seq
 
 if __name__ == '__main__':
-    for name in glob.glob('/home/dkoes/PDBbind/refined/*/*_rec.pdb'):
+    for name in glob.glob('/home/dkoes/PDBbind/refined-set/*/*_rec.pdb'):
         handle = ("/home/dkoes/PDBbind/refined/%s/%s_rec.pdb" %(name, name))
         structure = p.get_structure(name, handle)
         seq=getResidueString(structure)
 
-        for secondHandle in glob.glob('/home/dkoes/PDBbind/refined/*/*_rec.pdb'):
+        for secondHandle in glob.glob('/home/dkoes/PDBbind/refined-set/*/*_rec.pdb'):
             data= secondHandle.split("/")
             secondName = data[5]
             secondStructure = p.get_structure(secondName, secondHandle)
