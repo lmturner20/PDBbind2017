@@ -39,4 +39,4 @@ if __name__ == '__main__':
             distance = (length-score)/length
             fname = "/home/lmt72/PDBdistancesRef"+name+".distances"
             f = open('fname', 'w')
-            f.write(secondName, distance)
+            f.write(secondName+" "+distance)
