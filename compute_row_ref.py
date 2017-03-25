@@ -22,6 +22,7 @@ def getResidueString(structure):
     return seq
 
 if __name__ == '__main__':
+    p = PDBParser(PERMISSIVE=1,QUIET=1)
     for handle in glob.glob('/home/dkoes/PDBbind/refined-set/*/*_rec.pdb'):
         segments = handle.split("/")
 	name = segments[5]
