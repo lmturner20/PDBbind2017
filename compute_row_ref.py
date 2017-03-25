@@ -26,6 +26,8 @@ if __name__ == '__main__':
     for handle in glob.glob('/home/dkoes/PDBbind/refined-set/*/*_rec.pdb'):
         segments = handle.split("/")
 	name = segments[5]
+	fname = "/home/lmt72/PDBdistancesRef"+name+".distances"
+	f = open('fname', 'w')
         structure = p.get_structure(name, handle)
         seq=getResidueString(structure)
 
@@ -37,6 +39,4 @@ if __name__ == '__main__':
             score =  pairwise2.align.localdx(seq, secondSeq, matlist.blosum62, score_only=True)
             length= max(len(seq), len(secondSeq))
             distance = (length-score)/length
-            fname = "/home/lmt72/PDBdistancesRef"+name+".distances"
-            f = open('fname', 'w')
             f.write(secondName+" "+str(distance))
