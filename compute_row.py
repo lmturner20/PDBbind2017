@@ -2,6 +2,7 @@ from Bio.PDB.PDBParser import PDBParser
 from Bio.PDB.Polypeptide import is_aa
 from Bio.PDB.Polypeptide import three_to_one
 from Bio import pairwise2
+from Bio.SubsMat import MatrixInfo as matlist
 import argparse
 import sys
 import glob
@@ -35,7 +36,7 @@ if __name__ == '__main__':
         secondName = data[5]
         secondStructure = p.get_structure(secondName, secondHandle)
         secondSeq=getResidueString(secondStructure)
-        score = pairwise2.align.globalxx(seq, secondSeq, score_only=True)
+        score =  pairwise2.align.localdx(v, w, matlist.blosum62, score_only=True)
         length= max(len(seq), len(secondSeq))
         distance = (length-score)/length
         print secondName, distance
