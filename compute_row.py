@@ -27,11 +27,11 @@ if __name__ == '__main__':
     p= PDBParser(PERMISSIVE=1,QUIET=1)
 
     name = args.input
-    handle = ("/home/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(name, name))
+    handle = ("/home/dkoes/PDBbind/refined-set/%s/%s_rec.pdb" %(name, name))
     structure = p.get_structure(name, handle)
     seq=getResidueString(structure)
 
-    for secondHandle in glob.glob('/home/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
+    for secondHandle in glob.glob('/home/dkoes/PDBbind/refined-set/*/*_rec.pdb'):
         data= secondHandle.split("/")
         secondName = data[5]
         secondStructure = p.get_structure(secondName, secondHandle)
