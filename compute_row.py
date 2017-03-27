@@ -31,7 +31,7 @@ if __name__ == '__main__':
     structure = p.get_structure(name, handle)
     seq=getResidueString(structure)
 
-    for secondHandle in glob.glob('/net/pulsar/home/koes/dkoes/PDBbind/gerneral-set-with-refined/*/*_rec.pdb'):
+    for secondHandle in glob.glob('/net/pulsar/home/koes/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
         data= secondHandle.split("/")
         secondName = data[5]
         secondStructure = p.get_structure(secondName, secondHandle)
