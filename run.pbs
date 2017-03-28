@@ -13,7 +13,7 @@ echo ld_library_path $LD_LIBRARY_PATH
 cd $PBS_O_WORKDIR
 
 pdb =`sed -n "${PBS_ARRAYID}p" pdbs`
-python compute_row.py -i $pdb
+python compute_row2.py -i $pdb
 
 echo $cmd
 $cmd
