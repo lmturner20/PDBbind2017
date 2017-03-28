@@ -39,13 +39,13 @@ if __name__ == '__main__':
         secondChains = [ch for ch in secondStructure.get_chains()]
         print "Second chains done"
         
-    for chain in chains:
-        seq=getResidueString(chain)
-        print "First seq calculated"
-        for twoChain in secondChains:
-            secondSeq=getResidueString(twoChain)
-            print "Second seq calculated"
-            score = pairwise2.align.globalxx(seq, secondSeq, score_only=True)
-            length= min(len(seq), len(secondSeq))
-            distance = (length-score)/length
-            print secondName, distance
+        for chain in chains:
+            seq=getResidueString(chain)
+            print "First seq calculated"
+            for twoChain in secondChains:
+                secondSeq=getResidueString(twoChain)
+                print "Second seq calculated"
+                score = pairwise2.align.globalxx(seq, secondSeq, score_only=True)
+                length= min(len(seq), len(secondSeq))
+                distance = (length-score)/length
+                print secondName, distance
