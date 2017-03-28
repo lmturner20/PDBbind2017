@@ -28,13 +28,13 @@ if __name__ == '__main__':
     name = args.input
     handle = ("/net/pulsar/home/koes/dkoes/PDBbind/general-set-with-refined/%s/%s_rec.pdb" %(name, name))
     structure = p.get_structure(name, handle)
-    chains = [ch for ch in struct.get_chains(structure)]
+    chains = [ch for ch in structure.get_chains()]
 
     for secondHandle in glob.glob('/net/pulsar/home/koes/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
         data= secondHandle.split("/")
         secondName = data[-2]
         secondStructure = p.get_structure(secondName, secondHandle)
-        secondChains = [ch for ch in struct.get_chains(secondStructure)]
+        secondChains = [ch for ch in secondStructure.get_chains()]
         
     for chain in chains:
         seq=getResidueString(chain)
