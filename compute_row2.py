@@ -7,17 +7,16 @@ import argparse
 import sys
 import glob
 
-def getResidueString(structure):
+def getResidueString(chain):
     seq=''
-    for model in structure:
-        for residue in model.get_residues():
-            if is_aa(residue.get_resname(), standard=True):
-                seq+=(three_to_one(residue.get_resname()))
-	    else:
-		resname = residue.get_resname()
-		if resname == 'HIE' or resname == 'HID': seq+=('H')
-		elif resname == 'CYX' or resname == 'CYM': seq+=('C')
-		else: seq+=('X')
+    for residue in chain.get_residues():
+        if is_aa(residue.get_resname(), standard=True):
+            seq+=(three_to_one(residue.get_resname()))
+        else:
+            resname = residue.get_resname()
+            if resname == 'HIE' or resname == 'HID': seq+=('H')
+            elif resname == 'CYX' or resname == 'CYM': seq+=('C')
+            else: seq+=('X')
     return seq
 
 if __name__ == '__main__':
@@ -33,14 +32,14 @@ if __name__ == '__main__':
 
     for secondHandle in glob.glob('/net/pulsar/home/koes/dkoes/PDBbind/general-set-with-refined/*/*_rec.pdb'):
         data= secondHandle.split("/")
-        secondName = data[5]
+        secondName = data[-2]
         secondStructure = p.get_structure(secondName, secondHandle)
         secondChains = [ch for ch in struct.get_chains(secondStructure)]
         
     for chain in chains:
-        seq=getResidueString(chains)
+        seq=getResidueString(chain)
         for twoChain in secondChains:
-            secondSeq=getResidueString(secondStructure)
+            secondSeq=getResidueString(twoChain)
             score = pairwise2.align.globalxx(seq, secondSeq, score_only=True)
             length= min(len(seq), len(secondSeq))
             distance = (length-score)/length
