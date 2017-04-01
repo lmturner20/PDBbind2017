@@ -44,3 +44,4 @@ if __name__ == '__main__':
                 length= min(len(seq), len(secondSeq))
                 distance = (length-score)/length
                 print secondName, distance
+                sys.stdout.flush()
