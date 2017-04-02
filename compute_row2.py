@@ -35,6 +35,7 @@ if __name__ == '__main__':
         secondName = data[-2]
         secondStructure = p.get_structure(secondName, secondHandle)
         secondChains =  [ch for ch in secondStructure.get_chains()]
+        proteinDistances = []
         
         for chain in chains:
             seq=getResidueString(chain)
@@ -43,5 +44,7 @@ if __name__ == '__main__':
                 score = pairwise2.align.globalxx(seq, secondSeq, score_only=True)
                 length= min(len(seq), len(secondSeq))
                 distance = (length-score)/length
-                print secondName, distance
-                sys.stdout.flush()
+                proteinDistances.append(distance)
+        minDistance = min(proteinDistances)
+        print secondName, minDistance
+        sys.stdout.flush()
