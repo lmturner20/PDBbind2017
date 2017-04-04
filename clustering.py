@@ -166,6 +166,7 @@ if __name__ == '__main__':
     parser.add_argument('-r', '--repeat', action='store_false', default=True,help='if true poses can repeat between folds')
     parser.add_argument('--threshold', type=float,default=.2,help='what percentage dissimilariy to cluster by. default: 80% similarity(.2 dissimilarity)')
     parser.add_argument('--path',type=str,default='',help="path to gninatypes files")
+    parser.add_argument('--cpickle',type=str,default='',help="cpickle file")
     args = parser.parse_args()
     if args.crossvalidate:
 	args.test_train = True
@@ -178,21 +179,25 @@ if __name__ == '__main__':
     p= PDBParser(PERMISSIVE=1,QUIET=1)
     targets=[]
     target_names=[]
-
-    file = open(args.pbdfiles)
-    for line in file.readlines():
-	data= line.split(" ")
-	name = data[0]
-	handle= data[1].strip()
-	target_names.append(name)
-	structure=p.get_structure(name,handle)
-	seq=getResidueString(structure)
-	targets.append(seq)
-    file.close()
+	
+    if args.cpickle:
+        (distanceMatrix, cluster_groups, Z1, target_names) = cPickle.load(open("clusterstate.pickle"))
+    else:
+        file = open(args.pbdfiles)
+        for line in file.readlines():
+	    data= line.split(" ")
+	    name = data[0]
+	    handle= data[1].strip()
+	    target_names.append(name)
+	    structure=p.get_structure(name,handle)
+	    seq=getResidueString(structure)
+	    targets.append(seq)
+        file.close()
     print 'Number of targets: %d'%len(targets)
     if not args.test_train and args.number == 1 and not args.crossvalidate: 
 	folds = []
 	folds.append(target_names)
+    elif args.cpickle:
     else:
 	distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets, target_names)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
 	cluster_groups = calcClusterGroups(distanceMatrix,target_names)
