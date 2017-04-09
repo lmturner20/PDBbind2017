@@ -181,7 +181,7 @@ if __name__ == '__main__':
     target_names=[]
 	
     if args.cpickle:
-        (distanceMatrix, cluster_groups, Z1, target_names) = cPickle.load(open("clusterstate.pickle"))
+        (distanceMatrix, D, cluster_groups, target_names) = cPickle.load(open("clusterstate.pickle"))
     else:
         file = open(args.pbdfiles)
         for line in file.readlines():
