@@ -10,6 +10,7 @@ import os
 import cPickle
 import PIL
 
+parser = argparse.ArgumentParser(description='parser')
 parser.add_argument('-d','--directory',type=str,required=False,help="Directory with distance files")
 args = parser.parse_args()
 
