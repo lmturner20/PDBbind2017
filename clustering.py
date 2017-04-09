@@ -182,6 +182,15 @@ if __name__ == '__main__':
 	
     if args.cpickle:
         (distanceMatrix, D, cluster_groups, target_names) = cPickle.load(open("clusterstate.pickle"))
+        cluster_groups = calcClusterGroups(linkageMatrix,target_names)
+	print '%d clusters created'%len(cluster_groups)
+	j=0
+	for i in cluster_groups:
+	    j = j+1
+	    print j,':'
+	    for h in i:
+	       print h
+	folds = createFolds(cluster_groups,cnum, args)
     else:
         file = open(args.pbdfiles)
         for line in file.readlines():
@@ -194,6 +203,7 @@ if __name__ == '__main__':
 	    targets.append(seq)
         file.close()
     print 'Number of targets: %d'%len(targets)
+
     if not args.test_train and args.number == 1 and not args.crossvalidate: 
 	folds = []
 	folds.append(target_names)
