@@ -10,15 +10,18 @@ import os
 import cPickle
 import PIL
 
+parser.add_argument('-d','--directory',type=str,required=False,help="Directory with distance files")
+args = parser.parse_args()
+
 index = dict()
-for (i,fname) in enumerate(glob.glob('/home/lmt72/PDBdistances2/*.distances')):
+for (i,fname) in enumerate(glob.glob(args.directory+'/*.distances')):
     fname = os.path.basename(fname)
     if fname.endswith('.distances'):
         pdb = fname[:-10]
         index[pdb] = i
 length = len(index)
 npArray = np.zeros((length,length))
-for filename in glob.glob('/home/lmt72/PDBdistances2/*.distances'):
+for filename in glob.glob(args.directory+'/*.distances'):
     distanceFile = open(filename)
     filename = os.path.basename(filename)
     if filename.endswith('.distances'):
