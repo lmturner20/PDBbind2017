@@ -182,7 +182,7 @@ if __name__ == '__main__':
     target_names=[]
 	
     if args.cpickle:
-        (distanceMatrix, D, linkageMatrix, target_names) = cPickle.load(open("args.cpickle"))
+        (distanceMatrix, D, linkageMatrix, target_names) = cPickle.load(open(args.cpickle))
     else:
         file = open(args.pbdfiles)
         for line in file.readlines():
