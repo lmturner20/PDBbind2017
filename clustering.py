@@ -181,16 +181,7 @@ if __name__ == '__main__':
     target_names=[]
 	
     if args.cpickle:
-        (distanceMatrix, D, cluster_groups, target_names) = cPickle.load(open("clusterstate.pickle"))
-        cluster_groups = calcClusterGroups(linkageMatrix,target_names)
-	print '%d clusters created'%len(cluster_groups)
-	j=0
-	for i in cluster_groups:
-	    j = j+1
-	    print j,':'
-	    for h in i:
-	       print h
-	folds = createFolds(cluster_groups,cnum, args)
+        (distanceMatrix, D, linkageMatrix, target_names) = cPickle.load(open("clusterstate.pickle"))
     else:
         file = open(args.pbdfiles)
         for line in file.readlines():
@@ -208,6 +199,15 @@ if __name__ == '__main__':
 	folds = []
 	folds.append(target_names)
     elif args.cpickle:
+        cluster_groups = calcClusterGroups(linkageMatrix,target_names)
+	print '%d clusters created'%len(cluster_groups)
+	j=0
+	for i in cluster_groups:
+	    j = j+1
+	    print j,':'
+	    for h in i:
+	       print h
+	folds = createFolds(cluster_groups,cnum, args)
     else:
         distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets, target_names)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
         cluster_groups = calcClusterGroups(distanceMatrix,target_names)
