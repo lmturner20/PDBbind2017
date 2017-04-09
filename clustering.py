@@ -209,16 +209,16 @@ if __name__ == '__main__':
 	folds.append(target_names)
     elif args.cpickle:
     else:
-	distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets, target_names)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
-	cluster_groups = calcClusterGroups(distanceMatrix,target_names)
-	print '%d clusters created'%len(cluster_groups)
-	j=0
-	for i in cluster_groups:
+        distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets, target_names)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
+        cluster_groups = calcClusterGroups(distanceMatrix,target_names)
+        print '%d clusters created'%len(cluster_groups)
+        j=0
+        for i in cluster_groups:
 	    j = j+1
-	    print j,':'
-	    for h in i:
-	       print h
-	folds = createFolds(cluster_groups,cnum, args)
+            print j,':'
+            for h in i:
+               print h
+        folds = createFolds(cluster_groups,cnum, args)
     
     for f in xrange(len(folds)):
 	print '\n%d targets in set %d'%(len(folds[f]), f)
