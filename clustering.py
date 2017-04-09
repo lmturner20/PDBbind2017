@@ -9,6 +9,7 @@ from functools import partial
 import scipy.cluster.hierarchy
 import numpy as np
 import sys, argparse, bisect, re, os, fnmatch
+import cPickle
 
 ''' Some amino acids have nonstandard residue names: 
 http://ambermd.org/tutorials/advanced/tutorial1_adv/
@@ -181,7 +182,7 @@ if __name__ == '__main__':
     target_names=[]
 	
     if args.cpickle:
-        (distanceMatrix, D, linkageMatrix, target_names) = cPickle.load(open("clusterstate.pickle"))
+        (distanceMatrix, D, linkageMatrix, target_names) = cPickle.load(open("args.cpickle"))
     else:
         file = open(args.pbdfiles)
         for line in file.readlines():
