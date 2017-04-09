@@ -1,4 +1,5 @@
 from Bio.PDB.PDBParser import PDBParser
+import argparse
 import numpy as np
 import scipy.cluster.hierarchy as sch
 import matplotlib
