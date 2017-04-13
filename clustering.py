@@ -86,7 +86,7 @@ def createFolds(cluster_groups,cnum,args):
 	    target_numposes[maxindex]= -1
 	    sets[s].extend(cluster_groups[maxindex])
 	print 'groups created:'
-	print setlength 
+	#print setlength 
 	return sets
 	
     #if not crossvalidate
