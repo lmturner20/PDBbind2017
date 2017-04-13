@@ -73,13 +73,12 @@ def createFolds(cluster_groups,cnum,args):
 	target_numposes = [0]*len(cluster_groups)
 	for i in xrange(len(cluster_groups)):
 	    for t in cluster_groups[i]:
-		t = t[0:37]
 		try:
-		    posenum = len(fnmatch.filter(os.listdir(t), '*.gninatypes'))
-		    print *.gninatypes
+		    posenum = len(fnmatch.filter(os.listdir('%s/%s/gninatypes/'%(args.path,t)), '*.gninatypes'))
 		except OSError: 
-		    print '%s gninatype files not found at %s'%(t,t)
+		    print '%s gninatype files not found at %s/%s/gninatypes/'%(t,args.path,t)
 		    continue
+target_numposes[i] +=posenum
 		target_numposes[i] +=posenum
 		#print '%s: %d '%(t,posenum)
 	for _ in xrange(len(cluster_groups)):
