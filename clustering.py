@@ -79,7 +79,6 @@ def createFolds(cluster_groups,cnum,args):
 		    print '%s gninatype files not found at %s%s'%(t,args.path,t)
 		    continue
 		target_numposes[i] +=posenum
-		#print '%s: %d '%(t,posenum)
 	for _ in xrange(len(cluster_groups)):
 	    maxindex =target_numposes.index( np.max(target_numposes))
 	    s =setlength.index(np.min(setlength))
