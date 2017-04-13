@@ -86,7 +86,7 @@ def createFolds(cluster_groups,cnum,args):
 	    target_numposes[maxindex]= -1
 	    sets[s].extend(cluster_groups[maxindex])
 	print 'groups created:'
-	#print setlength 
+	print setlength 
 	return sets
 	
     #if not crossvalidate
@@ -200,12 +200,12 @@ if __name__ == '__main__':
     elif args.cpickle:
         cluster_groups = calcClusterGroups(linkageMatrix,target_names)
 	print '%d clusters created'%len(cluster_groups)
-	j=0
-	for i in cluster_groups:
-	    j = j+1
-	    print j,':'
-	    for h in i:
-	       print h
+	#j=0
+	#for i in cluster_groups:
+	    #j = j+1
+	    #print j,':'
+	    #for h in i:
+	       #print h
 	folds = createFolds(cluster_groups,cnum, args)
     else:
         distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets, target_names)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
