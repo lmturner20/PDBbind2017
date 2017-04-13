@@ -78,7 +78,6 @@ def createFolds(cluster_groups,cnum,args):
 		except OSError: 
 		    print '%s gninatype files not found at %s/%s/gninatypes/'%(t,args.path,t)
 		    continue
-target_numposes[i] +=posenum
 		target_numposes[i] +=posenum
 		#print '%s: %d '%(t,posenum)
 	for _ in xrange(len(cluster_groups)):
