@@ -166,7 +166,7 @@ if __name__ == '__main__':
     parser.add_argument('-t', '--test_train', action='store_false', default=True,help='create test and train sets')
     parser.add_argument('-r', '--repeat', action='store_false', default=True,help='if true poses can repeat between folds')
     parser.add_argument('--threshold', type=float,default=.2,help='what percentage dissimilariy to cluster by. default: 80% similarity(.2 dissimilarity)')
-    parser.add_argument('--path',type=str,default='/home/dkoes/PDBbind/general-set-with-refined/',help="path to gninatypes files")
+    parser.add_argument('--path',type=str,default='/home/dkoes/PDBbind/general-set/',help="path to gninatypes files")
     parser.add_argument('--cpickle',type=str,default='',help="cpickle file")
     args = parser.parse_args()
     if args.crossvalidate:
