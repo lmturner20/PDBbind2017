@@ -32,6 +32,7 @@ for filename in glob.glob(args.directory+'/*.distances'):
     for line in distanceFile:
         data= line.split()
         secondProtein = data[0]
+        print filename
         distance = float(data[1].strip())
         i = index[pdb]
         npArray[i,index[secondProtein]] = distance
