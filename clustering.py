@@ -198,14 +198,11 @@ if __name__ == '__main__':
 	folds = []
 	folds.append(target_names)
     elif args.cpickle:
-        cluster_groups = calcClusterGroups(linkageMatrix,target_names)
+	cluster_indexs = scipy.cluster.hierarchy.fcluster(linkageMatrix, args.threshold)
+        cluster_groups= [[] for _ in xrange(np.max(cluster_indexs))]
+	for i in xrange(cluster_indexs.size):                
+            cluster_groups[cluster_indexs[i]-1].append(target_names[i])        
 	print '%d clusters created'%len(cluster_groups)
-	#j=0
-	#for i in cluster_groups:
-	    #j = j+1
-	    #print j,':'
-	    #for h in i:
-	       #print h
 	folds = createFolds(cluster_groups,cnum, args)
     else:
         distanceMatrix = calcUpperTriangleOfDistanceMatrix(targets, target_names)#distances are sequence dis-similarity so that a smaller distance corresponds to more similar sequence
