@@ -13,6 +13,7 @@ args = parser.parse_args()
 globef = args.globe
 chainf = args.chain
 randomf = args.random
+outprefix = args.outprefix
 
 gtrue = []
 gscore = []
