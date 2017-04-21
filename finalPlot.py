@@ -15,7 +15,7 @@ randomf = args.random
 
 gtrue = []
 gscore = []
-globef = open('/net/pulsar/koes/lmt72/PDBbind/global.finaltest,'r')
+globef = open('/net/pulsar/koes/lmt72/PDBbind/global.finaltest','r')
 for line in globef:
     data= line.split()
     gtrue += data[0]
@@ -25,7 +25,7 @@ auc = sklearn.metrics.roc_auc_score(gtrue,gscore)
 
 ltrue = []
 lscore = []
-chainf = open('/net/pulsar/koes/lmt72/PDBbind/local.finaltest,'r')
+chainf = open('/net/pulsar/koes/lmt72/PDBbind/local.finaltest','r')
 for line in chainf:
     data= line.split()
     ltrue += data[0]
@@ -35,7 +35,7 @@ auc2 = sklearn.metrics.roc_auc_score(ltrue,lscore)
 
 rtrue = []
 rscore = []
-randomf = open('/net/pulsar/koes/lmt72/PDBbind/random.finaltest,'r')
+randomf = open('/net/pulsar/koes/lmt72/PDBbind/random.finaltest','r')
 for line in randomf:
     data= line.split()
     rtrue += data[0]
