@@ -19,7 +19,7 @@ globefile = open(globef,'r')
 for line in globefile:
     data= line.split()
     gtrue.append( data[0] )
-    gscore.append( float(data[1].strip()) )
+    gscore.append( data[1].strip() )
 fpr, tpr, _ = sklearn.metrics.roc_curve(gtrue,gscore)
 auc = sklearn.metrics.roc_auc_score(gtrue,gscore)
 
