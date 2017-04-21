@@ -30,9 +30,12 @@ ltrue = []
 lscore = []
 chainfile = open(chainf,'r')
 for line in chainfile:
-    data= line.split()
-    ltrue += data[0]
-    lscore += float(data[1].strip())
+    if line.startswith('#'):
+        pass
+    else:
+        data= line.split()
+        ltrue.append( bool(float(data[0])) )
+        lscore.append( float(data[1].strip()) )
 fpr2, tpr2, _ = sklearn.metrics.roc_curve(ltrue,lscore)
 auc2 = sklearn.metrics.roc_auc_score(ltrue,lscore)
 
@@ -40,9 +43,12 @@ rtrue = []
 rscore = []
 randomfile = open(randomf,'r')
 for line in randomfile:
-    data= line.split()
-    rtrue += data[0]
-    rscore += float(data[1].strip())
+    if line.startswith('#'):
+        pass
+    else:
+        data= line.split()
+        rtrue.append( bool(float(data[0])) )
+        rscore.append( float(data[1].strip()) )
 fpr3, tpr3, _ = sklearn.metrics.roc_curve(rtrue,rscore)
 auc3 = sklearn.metrics.roc_auc_score(rtrue,rscore)
 
