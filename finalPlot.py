@@ -52,6 +52,7 @@ for line in randomfile:
 fpr3, tpr3, _ = sklearn.metrics.roc_curve(rtrue,rscore)
 auc3 = sklearn.metrics.roc_auc_score(rtrue,rscore)
 
+lastiter = 1000
 txt = 'For the last %s iterations:\nmean AUC=%.2f  max AUC=%.2f  min AUC=%.2f'%(lastiter,avgAUC,maxAUC,minAUC)
 fig = plt.figure(figsize=(8,8))
 plt.plot(fpr,tpr,label='CNN (AUC=%.2f)'%(auc),linewidth=4,color='b')
