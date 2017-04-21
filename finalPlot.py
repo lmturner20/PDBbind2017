@@ -8,6 +8,7 @@ parser = argparse.ArgumentParser(description='argparse')
 parser.add_argument('-g','--globe',type=str,required=True,help="Global file")
 parser.add_argument('-l','--chain',type=str,required=True,help="Local file")
 parser.add_argument('-r','--random',type=str,required=True,help="Random file")
+parser.add_argument('-o','--outprefix',type=str,help="Prefix for output files, default <model>.<pid>",default='')
 args = parser.parse_args()
 globef = args.globe
 chainf = args.chain
