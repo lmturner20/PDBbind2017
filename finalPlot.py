@@ -18,6 +18,7 @@ gscore = []
 globefile = open(globef,'r')
 for line in globefile:
     if line.startsWith('#'):
+        pass
     else:
         data= line.split()
         gtrue.append( bool(data[0]) )
