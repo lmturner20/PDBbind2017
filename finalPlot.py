@@ -51,6 +51,6 @@ plt.legend(loc='lower right',fontsize=20)
 plt.xlabel('False Positive Rate',fontsize=22)
 plt.ylabel('True Positive Rate',fontsize=22)
 plt.axes().set_aspect('equal')
-plt.tick_params(axis='both', which='major', labelsize=16
-plt.text(.05, -.25, txt, {'fontsize':22})
+plt.tick_params(axis='both', which='major', labelsize=16)
+plt.text(.05, -.25, txt, fontsize=22)
 plt.savefig('%s_roc.pdf'%outprefix,bbox_inches='tight')
